@@ -1,0 +1,1350 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SUKA PROTECT - Spesialis Akses Door & CCTV</title>
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;700&family=Inter:wght@300;400;600&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Bootstrap Icons -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+    />
+
+    <!-- Tailwind CSS via CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Tailwind Config untuk Warna -->
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              "vernova-dark": "#041718",
+              "vernova-green": "#0071bc",
+              "vernova-green2": "#009aef",
+              "vernova-light": "#F4F7F6",
+              "footer-dark": "#1a1a1a",
+              "white-1": "#ffffff",
+            },
+            fontFamily: {
+              display: ["Outfit", "sans-serif"],
+              body: ["Inter", "sans-serif"],
+            },
+          },
+        },
+      };
+    </script>
+
+    <style>
+      .reveal-elem {
+        opacity: 0;
+        transform: translateY(40px);
+      }
+      .image-parallax-container {
+        overflow: hidden;
+      }
+      .nav-link {
+        position: relative;
+      }
+      .nav-link::after {
+        content: "";
+        position: absolute;
+        width: 0;
+        height: 2px;
+        bottom: -4px;
+        left: 0;
+        background-color: #009aef;
+        transition: width 0.3s ease;
+      }
+      .nav-link:hover::after {
+        width: 100%;
+      }
+      .dropdown-menu {
+        display: none;
+      }
+      .group:hover .dropdown-menu {
+        display: block;
+      }
+      .dropdown-menu::before {
+        content: "";
+        position: absolute;
+        top: -20px;
+        left: 0;
+        width: 100%;
+        height: 20px;
+        background: transparent;
+      }
+      .footer-link {
+        position: relative;
+        display: inline-block;
+        transition:
+          transform 0.3s ease,
+          color 0.3s ease;
+        color: #d1d5db;
+      }
+      .footer-link::before {
+        content: "";
+        position: absolute;
+        left: -16px;
+        top: 50%;
+        transform: translateY(-50%) scale(0);
+        width: 6px;
+        height: 6px;
+        border-radius: 50%;
+        background-color: #009aef;
+        transition:
+          transform 0.3s ease,
+          opacity 0.3s ease;
+        opacity: 0;
+      }
+      .footer-link:hover {
+        color: #ffffff;
+        transform: translateX(16px);
+      }
+      .footer-link:hover::before {
+        transform: translateY(-50%) scale(1);
+        opacity: 1;
+      }
+      html {
+        scroll-behavior: smooth;
+        scroll-padding-top: 100px;
+      }
+    </style>
+  </head>
+  <body class="bg-white text-vernova-dark font-body overflow-x-hidden">
+    <!-- NAVBAR -->
+    <nav
+      id="navbar"
+      class="fixed w-full z-50 top-0 transition-all duration-300 px-6 lg:px-12 bg-gradient-to-b from-black/80 to-transparent"
+    >
+      <div
+        class="flex justify-between items-center w-full max-w-[1400px] mx-auto py-4 relative z-50"
+      >
+        <!-- Logo / Nama Usaha -->
+        <div class="flex items-center gap-2">
+          <a href="#" class="flex items-center gap-2">
+            <img src="asset/Logo.png" alt="" class="w-[170px]" />
+          </a>
+        </div>
+
+        <!-- Desktop Links & CTA -->
+        <div class="hidden lg:flex items-center space-x-8">
+          <a
+            href="#"
+            class="nav-link text-sm font-medium tracking-wide text-white uppercase"
+            >Home</a
+          >
+          <a
+            href="#about-us"
+            class="nav-link text-sm font-medium tracking-wide text-white uppercase"
+            >About Us</a
+          >
+
+          <!-- Dropdown Product -->
+          <div class="relative group py-2">
+            <a
+              href="#our-product"
+              class="nav-link text-sm font-medium tracking-wide text-white uppercase flex items-center gap-1"
+            >
+              Product <i class="bi bi-chevron-down text-[10px]"></i>
+            </a>
+            <div
+              class="absolute left-0 mt-4 w-56 bg-vernova-dark border border-white/10 shadow-2xl dropdown-menu rounded-b-lg py-2"
+            >
+              <a
+                href="#akses-door"
+                class="block px-4 py-3 text-sm text-gray-300 hover:text-white hover:bg-white/5 transition-colors"
+                ><i class="bi bi-door-closed mr-2 text-vernova-green2"></i>
+                Akses Door</a
+              >
+              <a
+                href="#cctv"
+                class="block px-4 py-3 text-sm text-gray-300 hover:text-white hover:bg-white/5 transition-colors"
+                ><i class="bi bi-webcam mr-2 text-vernova-green2"></i> CCTV</a
+              >
+              <a
+                href="#paket-pemasangan"
+                class="block px-4 py-3 text-sm text-gray-300 hover:text-white hover:bg-white/5 transition-colors"
+                ><i class="bi bi-box-seam mr-2 text-vernova-green2"></i> Paket
+                Pemasangan</a
+              >
+              <a
+                href="#galeri"
+                class="block px-4 py-3 text-sm text-gray-300 hover:text-white hover:bg-white/5 transition-colors"
+                ><i class="bi bi-images mr-2 text-vernova-green2"></i> Galeri
+                Pemasangan</a
+              >
+            </div>
+          </div>
+
+          <a
+            href="#contact"
+            class="nav-link text-sm font-medium tracking-wide text-white uppercase"
+            >Contact</a
+          >
+
+          <a
+            href="https://wa.me/628561507488?text=Halo%20Suka%20Protect,%20saya%20tertarik%20dengan%20layanan%20Akses%20Door%20dan%20CCTV"
+            target="_blank"
+            class="bg-vernova-green2 text-vernova-dark px-6 py-2.5 rounded-full font-bold uppercase tracking-wider text-xs hover:bg-white transition-colors duration-300 whitespace-nowrap"
+          >
+            Let's Talk
+          </a>
+        </div>
+
+        <!-- Burger Menu Button (Mobile) -->
+        <div class="flex items-center lg:hidden relative z-50">
+          <button id="mobile-btn" class="text-white focus:outline-none p-1">
+            <i class="bi bi-list text-4xl"></i>
+          </button>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Mobile Fullscreen Menu Overlay -->
+    <div
+      id="mobile-menu"
+      class="fixed inset-0 w-full h-screen bg-vernova-dark z-[100] transform translate-x-full transition-transform duration-500 ease-in-out flex flex-col"
+    >
+      <div
+        class="flex justify-between items-center w-full py-6 px-6 lg:px-12 border-b border-white/10 shrink-0"
+      >
+        <a href="#" class="flex items-center gap-2">
+          <img src="asset/Logo.png" alt="" class="w-[170px]" />
+        </a>
+        <button id="mobile-close" class="text-white focus:outline-none p-1">
+          <i class="bi bi-x text-4xl"></i>
+        </button>
+      </div>
+
+      <div
+        class="flex-grow flex flex-col justify-start space-y-6 overflow-y-auto px-10 pb-8 pt-8"
+      >
+        <a
+          href="#"
+          class="mobile-link text-2xl font-display font-medium tracking-wide text-white uppercase hover:text-vernova-green2 transition-colors"
+          >Home</a
+        >
+        <a
+          href="#about-us"
+          class="mobile-link text-2xl font-display font-medium tracking-wide text-white uppercase hover:text-vernova-green2 transition-colors"
+          >About Us</a
+        >
+
+        <!-- Mobile Dropdown: Product -->
+        <div class="w-full">
+          <button
+            class="mobile-dropdown-btn w-full text-left text-2xl font-display font-medium tracking-wide text-white uppercase hover:text-vernova-green2 transition-colors flex justify-between items-center"
+          >
+            Product
+            <i
+              class="bi bi-chevron-down text-xl transition-transform duration-300"
+            ></i>
+          </button>
+          <div
+            class="mobile-dropdown-content hidden flex-col pl-4 mt-4 space-y-3 border-l border-white/20"
+          >
+            <a
+              href="#akses-door"
+              class="mobile-link text-lg text-gray-300 hover:text-white transition-colors block"
+              >Akses Door</a
+            >
+            <a
+              href="#cctv"
+              class="mobile-link text-lg text-gray-300 hover:text-white transition-colors block"
+              >CCTV</a
+            >
+            <a
+              href="#paket-pemasangan"
+              class="mobile-link text-lg text-gray-300 hover:text-white transition-colors block"
+              >Paket Pemasangan</a
+            >
+            <a
+              href="#galeri"
+              class="mobile-link text-lg text-gray-300 hover:text-white transition-colors block"
+              >Galeri Pemasangan</a
+            >
+          </div>
+        </div>
+
+        <a
+          href="#contact"
+          class="mobile-link text-2xl font-display font-medium tracking-wide text-white uppercase hover:text-vernova-green2 transition-colors"
+          >Contact</a
+        >
+
+        <div
+          class="mt-6 border-t border-white/10 pt-6 w-full max-w-xs shrink-0"
+        >
+          <a
+            href="https://wa.me/6281234567890?text=Halo%20Suka%20Protect,%20saya%20tertarik%20dengan%20layanan%20Akses%20Door%20dan%20CCTV"
+            target="_blank"
+            class="mobile-link block text-center bg-vernova-green2 text-vernova-dark px-6 py-4 rounded-full font-bold uppercase tracking-wider text-sm hover:bg-white transition-colors duration-300"
+          >
+            Let's Talk
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- HERO SECTION (3 SLIDES) -->
+    <section
+      class="relative h-screen min-h-[700px] flex items-end pb-24 lg:pb-32 px-6 lg:px-12 overflow-hidden"
+    >
+      <!-- Slide 1 -->
+      <div
+        class="hero-slide absolute inset-0 transition-opacity duration-1000 opacity-100 z-0"
+      >
+        <div class="absolute inset-0 image-parallax-container">
+          <img
+            src="asset/aksessdoor finger.jpg"
+            alt="Slide 1"
+            class="w-full h-full object-cover opacity-50"
+          />
+          <div
+            class="absolute inset-0 bg-gradient-to-t from-vernova-dark via-vernova-dark/60 to-transparent"
+          ></div>
+        </div>
+      </div>
+
+      <!-- Slide 2 -->
+      <div
+        class="hero-slide absolute inset-0 transition-opacity duration-1000 opacity-0 z-0"
+      >
+        <div class="absolute inset-0 image-parallax-container">
+          <img
+            src="asset/finger3.jpg"
+            alt="Slide 2"
+            class="w-full h-full object-cover opacity-50"
+          />
+          <div
+            class="absolute inset-0 bg-gradient-to-t from-vernova-dark via-vernova-dark/60 to-transparent"
+          ></div>
+        </div>
+      </div>
+
+      <!-- Slide 3 -->
+      <div
+        class="hero-slide absolute inset-0 transition-opacity duration-1000 opacity-0 z-0"
+      >
+        <div class="absolute inset-0 image-parallax-container">
+          <img
+            src="asset/cctv indoor.jpg"
+            alt="Slide 3"
+            class="w-full h-full object-cover opacity-50"
+          />
+          <div
+            class="absolute inset-0 bg-gradient-to-t from-vernova-dark via-vernova-dark/60 to-transparent"
+          ></div>
+        </div>
+      </div>
+
+      <!-- Hero Content Container -->
+      <div class="relative z-10 w-full max-w-[1400px] mx-auto">
+        <!-- Text Group 1 -->
+        <div
+          class="hero-content-group absolute bottom-0 left-0 transition-all duration-700 opacity-100 translate-y-0"
+          data-index="0"
+        >
+          <span
+            class="text-white font-display font-medium tracking-widest uppercase text-sm lg:text-base block mb-2"
+            >Spesialis Pemasangan & Perawatan Keamanan</span
+          >
+          <h1
+            class="font-display font-bold text-5xl md:text-7xl lg:text-8xl leading-[1.05] tracking-tight mb-10 max-w-5xl text-vernova-green2"
+          >
+            SUKA PROTECT<br />Akses Door & CCTV Solusi.
+          </h1>
+          <a
+            href="https://wa.me/6281234567890?text=Halo%20Suka%20Protect,%20saya%20ingin%20konsultasi%20gratis"
+            target="_blank"
+            class="group relative inline-flex items-center justify-center pl-8 pr-2.5 py-2.5 overflow-hidden rounded-full border border-white text-white font-bold uppercase tracking-wider text-sm transition-all duration-500"
+          >
+            <span
+              class="absolute left-0 top-0 w-0 h-full bg-white transition-all duration-500 ease-out group-hover:w-full z-0"
+            ></span>
+            <span
+              class="relative z-10 transition-colors duration-500 group-hover:text-vernova-dark mr-6"
+              >Konsultasi Gratis</span
+            >
+            <span
+              class="relative z-10 flex items-center justify-center w-11 h-11 rounded-full bg-vernova-green2 text-vernova-dark transition-transform duration-500 ease-out transform group-hover:translate-x-1"
+            >
+              <i class="bi bi-arrow-right text-xl"></i>
+            </span>
+          </a>
+        </div>
+
+        <!-- Text Group 2 -->
+        <div
+          class="hero-content-group absolute bottom-0 left-0 transition-all duration-700 opacity-0 translate-y-8 pointer-events-none"
+          data-index="1"
+        >
+          <span
+            class="text-white font-display font-medium tracking-widest uppercase text-sm lg:text-base block mb-2"
+            >Keamanan Pintu Otomatis & Biometrik</span
+          >
+          <h1
+            class="font-display font-bold text-5xl md:text-7xl lg:text-8xl leading-[1.05] tracking-tight mb-10 max-w-5xl text-vernova-green2"
+          >
+            Sistem Akses Door<br />Modern & Terpercaya.
+          </h1>
+          <a
+            href="https://wa.me/6281234567890?text=Halo%20Suka%20Protect,%20saya%20tertarik%20dengan%20layanan%20Akses%20Door"
+            target="_blank"
+            class="group relative inline-flex items-center justify-center pl-8 pr-2.5 py-2.5 overflow-hidden rounded-full border border-white text-white font-bold uppercase tracking-wider text-sm transition-all duration-500"
+          >
+            <span
+              class="absolute left-0 top-0 w-0 h-full bg-white transition-all duration-500 ease-out group-hover:w-full z-0"
+            ></span>
+            <span
+              class="relative z-10 transition-colors duration-500 group-hover:text-vernova-dark mr-6"
+              >Info Akses Door</span
+            >
+            <span
+              class="relative z-10 flex items-center justify-center w-11 h-11 rounded-full bg-vernova-green2 text-vernova-dark transition-transform duration-500 ease-out transform group-hover:translate-x-1"
+            >
+              <i class="bi bi-arrow-right text-xl"></i>
+            </span>
+          </a>
+        </div>
+
+        <!-- Text Group 3 -->
+        <div
+          class="hero-content-group absolute bottom-0 left-0 transition-all duration-700 opacity-0 translate-y-8 pointer-events-none"
+          data-index="2"
+        >
+          <span
+            class="text-white font-display font-medium tracking-widest uppercase text-sm lg:text-base block mb-2"
+            >Pantau Usaha Anda Kapan Saja</span
+          >
+          <h1
+            class="font-display font-bold text-5xl md:text-7xl lg:text-8xl leading-[1.05] tracking-tight mb-10 max-w-5xl text-vernova-green2"
+          >
+            Instalasi CCTV HD<br />& Monitoring Handphone.
+          </h1>
+          <a
+            href="https://wa.me/6281234567890?text=Halo%20Suka%20Protect,%20saya%20tertarik%20dengan%20layanan%20CCTV"
+            target="_blank"
+            class="group relative inline-flex items-center justify-center pl-8 pr-2.5 py-2.5 overflow-hidden rounded-full border border-white text-white font-bold uppercase tracking-wider text-sm transition-all duration-500"
+          >
+            <span
+              class="absolute left-0 top-0 w-0 h-full bg-white transition-all duration-500 ease-out group-hover:w-full z-0"
+            ></span>
+            <span
+              class="relative z-10 transition-colors duration-500 group-hover:text-vernova-dark mr-6"
+              >Info Paket CCTV</span
+            >
+            <span
+              class="relative z-10 flex items-center justify-center w-11 h-11 rounded-full bg-vernova-green2 text-vernova-dark transition-transform duration-500 ease-out transform group-hover:translate-x-1"
+            >
+              <i class="bi bi-arrow-right text-xl"></i>
+            </span>
+          </a>
+        </div>
+      </div>
+
+      <!-- Slider Controls (Arrows & Indicators) -->
+      <div
+        class="absolute bottom-8 right-6 lg:right-12 z-20 flex items-center gap-4"
+      >
+        <div class="flex gap-2 mr-4" id="slider-dots">
+          <button
+            onclick="currentSlide(0)"
+            class="w-3 h-3 rounded-full bg-white transition-all duration-300 dot-indicator"
+            aria-label="Slide 1"
+          ></button>
+          <button
+            onclick="currentSlide(1)"
+            class="w-3 h-3 rounded-full bg-white/40 transition-all duration-300 dot-indicator"
+            aria-label="Slide 2"
+          ></button>
+          <button
+            onclick="currentSlide(2)"
+            class="w-3 h-3 rounded-full bg-white/40 transition-all duration-300 dot-indicator"
+            aria-label="Slide 3"
+          ></button>
+        </div>
+        <button
+          onclick="changeSlide(-1)"
+          class="w-10 h-10 rounded-full border border-white/30 text-white flex items-center justify-center hover:bg-white hover:text-vernova-dark transition-colors"
+          aria-label="Previous Slide"
+        >
+          <i class="bi bi-chevron-left"></i>
+        </button>
+        <button
+          onclick="changeSlide(1)"
+          class="w-10 h-10 rounded-full border border-white/30 text-white flex items-center justify-center hover:bg-white hover:text-vernova-dark transition-colors"
+          aria-label="Next Slide"
+        >
+          <i class="bi bi-chevron-right"></i>
+        </button>
+      </div>
+    </section>
+
+    <!-- ABOUT US SECTION -->
+    <section
+      id="about-us"
+      class="py-24 lg:py-32 px-6 lg:px-12 bg-vernova-light text-vernova-dark"
+    >
+      <div class="w-full max-w-[1400px] mx-auto space-y-24">
+        <div
+          class="flex flex-col lg:flex-row justify-between items-start gap-12 border-b border-gray-200 pb-16"
+        >
+          <div class="lg:w-1/3">
+            <span
+              class="bg-vernova-green/20 text-vernova-dark px-4 py-1.5 rounded-full text-xs font-bold tracking-widest uppercase inline-block mb-4 reveal-elem"
+            >
+              Tentang Kami
+            </span>
+            <h2
+              class="font-display text-4xl lg:text-5xl font-bold leading-tight reveal-elem"
+            >
+              SUKA PROTECT
+            </h2>
+            <div class="w-16 h-1 bg-vernova-green mt-6 reveal-elem"></div>
+          </div>
+
+          <div class="lg:w-2/3 space-y-8">
+            <p
+              class="font-display text-2xl lg:text-3xl leading-relaxed text-gray-800 font-medium reveal-elem"
+            >
+              Kami adalah usaha perorangan profesional yang berfokus khusus pada
+              penyediaan, instalasi, dan perawatan sistem
+              <span class="text-vernova-green">Akses Door</span> dan
+              <span class="text-vernova-green">CCTV</span> untuk ruko, kantor,
+              pabrik, dan perumahan.
+            </p>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 pt-4 reveal-elem">
+              <div
+                class="bg-white p-6 rounded-xl border border-gray-200 shadow-sm hover:shadow-md transition-shadow"
+              >
+                <div
+                  class="w-10 h-10 rounded-lg bg-vernova-green/10 text-vernova-dark flex items-center justify-center mb-4"
+                >
+                  <i class="bi bi-shield-check text-xl"></i>
+                </div>
+                <h4 class="font-display font-bold text-lg mb-2">
+                  Fokus Bidang Usaha
+                </h4>
+                <p class="text-sm text-gray-600 leading-relaxed">
+                  Menyediakan layanan instalasi mumpuni khusus perangkat
+                  keamanan fisik gerbang/pintu (Akses Door) dan pemantauan video
+                  pengawasan (CCTV).
+                </p>
+              </div>
+
+              <div
+                class="bg-white p-6 rounded-xl border border-gray-200 shadow-sm hover:shadow-md transition-shadow"
+              >
+                <div
+                  class="w-10 h-10 rounded-lg bg-vernova-green/10 text-vernova-dark flex items-center justify-center mb-4"
+                >
+                  <i class="bi bi-tools text-xl"></i>
+                </div>
+                <h4 class="font-display font-bold text-lg mb-2">
+                  Layanan & Purna Jual
+                </h4>
+                <p class="text-sm text-gray-600 leading-relaxed">
+                  Memberikan garansi pemasangan, setting aplikasi monitoring
+                  online di handphone, serta perbaikan cepat dan responsif.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- OUR PRODUCTS SECTION -->
+    <section
+      id="our-product"
+      class="bg-white py-32 px-6 lg:px-12 text-vernova-dark"
+    >
+      <div class="w-full max-w-[1400px] mx-auto">
+        <div
+          class="flex justify-between items-end mb-16 reveal-elem border-b border-gray-200 pb-6"
+        >
+          <div>
+            <span
+              class="bg-vernova-green/20 text-vernova-dark px-4 py-1.5 rounded-full text-xs font-bold tracking-widest uppercase inline-block mb-3"
+            >
+              Katalog Produk & Layanan
+            </span>
+            <h2 class="font-display text-4xl lg:text-5xl font-bold">
+              Produk Utama SUKA PROTECT
+            </h2>
+          </div>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <!-- Product 1: Akses Door -->
+          <div
+            id="akses-door"
+            class="group block relative h-[520px] overflow-hidden reveal-elem rounded-2xl shadow-lg"
+          >
+            <div class="absolute inset-0 image-parallax-container">
+              <img
+                src="https://images.unsplash.com/photo-1558002038-1055907df827?q=80&w=2070&auto=format&fit=crop"
+                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out"
+                alt="Akses Door"
+              />
+              <div
+                class="absolute inset-0 bg-gradient-to-t from-vernova-dark via-vernova-dark/50 to-transparent opacity-85 group-hover:opacity-90 transition-opacity"
+              ></div>
+            </div>
+            <div class="absolute bottom-0 left-0 p-8 w-full">
+              <div
+                class="w-12 h-12 rounded-full border border-vernova-green flex items-center justify-center mb-6 group-hover:bg-vernova-green group-hover:text-vernova-dark transition-colors text-vernova-green"
+              >
+                <i class="bi bi-door-closed text-2xl"></i>
+              </div>
+              <h3 class="font-display text-3xl font-bold mb-3 text-white">
+                Akses Door (Access Control)
+              </h3>
+              <p class="text-gray-300 text-sm leading-relaxed mb-4">
+                Sistem pengaman pintu otomatis menggunakan Fingerprint (Sidik
+                Jari), Face Recognition (Wajah), RFID Card, dan Push Button.
+                Cocok untuk kantor, ruang server, dan pintu utama.
+              </p>
+              <a
+                href="https://wa.me/6281234567890?text=Halo%20Suka%20Protect,%20saya%20tertarik%20dengan%20produk%20Akses%20Door"
+                target="_blank"
+                class="inline-flex items-center text-xs font-bold uppercase tracking-wider text-vernova-green2 hover:underline"
+              >
+                Pesan via WhatsApp <i class="bi bi-arrow-right ml-2"></i>
+              </a>
+            </div>
+          </div>
+
+          <!-- Product 2: CCTV -->
+          <div
+            id="cctv"
+            class="group block relative h-[520px] overflow-hidden reveal-elem rounded-2xl shadow-lg"
+            style="transition-delay: 100ms"
+          >
+            <div class="absolute inset-0 image-parallax-container">
+              <img
+                src="https://images.unsplash.com/photo-1557597774-9d273605dfa9?q=80&w=2070&auto=format&fit=crop"
+                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out"
+                alt="CCTV"
+              />
+              <div
+                class="absolute inset-0 bg-gradient-to-t from-vernova-dark via-vernova-dark/50 to-transparent opacity-85 group-hover:opacity-90 transition-opacity"
+              ></div>
+            </div>
+            <div class="absolute bottom-0 left-0 p-8 w-full">
+              <div
+                class="w-12 h-12 rounded-full border border-vernova-green flex items-center justify-center mb-6 group-hover:bg-vernova-green group-hover:text-vernova-dark transition-colors text-vernova-green"
+              >
+                <i class="bi bi-webcam text-2xl"></i>
+              </div>
+              <h3 class="font-display text-3xl font-bold mb-3 text-white">
+                CCTV Surveillance Systems
+              </h3>
+              <p class="text-gray-300 text-sm leading-relaxed mb-4">
+                Pemasangan kamera pengawas beresolusi tinggi (HD/4K) indoor
+                maupun outdoor. Dilengkapi fitur Night Vision, perekam DVR/NVR,
+                serta koneksi langsung ke HP (Android/iOS).
+              </p>
+              <a
+                href="https://wa.me/6281234567890?text=Halo%20Suka%20Protect,%20saya%20tertarik%20dengan%20produk%20CCTV"
+                target="_blank"
+                class="inline-flex items-center text-xs font-bold uppercase tracking-wider text-vernova-green2 hover:underline"
+              >
+                Pesan via WhatsApp <i class="bi bi-arrow-right ml-2"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PAKET CCTV & AKSES DOOR -->
+    <section
+      id="paket-pemasangan"
+      class="py-24 px-6 lg:px-12 bg-vernova-light text-vernova-dark"
+    >
+      <div class="w-full max-w-[1400px] mx-auto">
+        <div class="text-center mb-16 reveal-elem">
+          <span
+            class="bg-vernova-green/20 text-vernova-dark px-4 py-1.5 rounded-full text-xs font-bold tracking-widest uppercase inline-block mb-3"
+          >
+            Paket Siap Pasang
+          </span>
+          <h2 class="font-display text-4xl lg:text-5xl font-bold mb-4">
+            Pilihan Paket CCTV & Akses Door
+          </h2>
+          <p class="text-gray-600 max-w-2xl mx-auto">
+            Solusi praktis dan hemat untuk kebutuhan pengamanan tempat usaha
+            atau rumah Anda.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <!-- Paket 1 -->
+          <div
+            class="bg-white rounded-2xl overflow-hidden border border-gray-200 shadow-sm flex flex-col justify-between reveal-elem"
+          >
+            <div>
+              <div class="h-48 w-full overflow-hidden bg-gray-100">
+                <img
+                  src="https://images.unsplash.com/photo-1557597774-9d273605dfa9?q=80&w=800&auto=format&fit=crop"
+                  alt="Paket CCTV 4 Channel"
+                  class="w-full h-full object-cover"
+                />
+              </div>
+              <div class="p-8">
+                <div
+                  class="bg-vernova-green/10 text-vernova-dark text-xs font-bold uppercase tracking-wider px-3 py-1 rounded-full inline-block mb-4"
+                >
+                  Paket Hemat
+                </div>
+                <h3 class="font-display text-2xl font-bold mb-2">
+                  Paket CCTV 4 Channel
+                </h3>
+                <p class="text-gray-500 text-sm mb-6">
+                  Cocok untuk rumah tinggal atau ruko kecil.
+                </p>
+                <ul class="space-y-3 text-sm text-gray-700 mb-8">
+                  <li class="flex items-center gap-2">
+                    <i class="bi bi-check2 text-vernova-green font-bold"></i> 4
+                    Unit Kamera Indoor/Outdoor HD
+                  </li>
+                  <li class="flex items-center gap-2">
+                    <i class="bi bi-check2 text-vernova-green font-bold"></i> 1
+                    Unit DVR 4 Channel + HDD
+                  </li>
+                  <li class="flex items-center gap-2">
+                    <i class="bi bi-check2 text-vernova-green font-bold"></i>
+                    Free Kabel & Konektor
+                  </li>
+                  <li class="flex items-center gap-2">
+                    <i class="bi bi-check2 text-vernova-green font-bold"></i>
+                    Set up online ke Handphone
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <div class="p-8 pt-0">
+              <a
+                href="https://wa.me/6281234567890?text=Halo%20Suka%20Protect,%20saya%20ingin%20memesan%20Paket%20CCTV%204%20Channel"
+                target="_blank"
+                class="block text-center bg-vernova-dark text-white font-bold py-3 rounded-xl hover:bg-vernova-green2 transition-colors"
+                >Pilih Paket Ini</a
+              >
+            </div>
+          </div>
+
+          <!-- Paket 2 -->
+          <div
+            class="bg-white rounded-2xl overflow-hidden border-2 border-vernova-green2 shadow-md flex flex-col justify-between reveal-elem relative"
+          >
+            <span
+              class="absolute top-4 right-4 z-10 bg-vernova-green2 text-vernova-dark text-[10px] font-bold uppercase tracking-widest px-3 py-1 rounded-full shadow"
+              >Terlaris</span
+            >
+            <div>
+              <div class="h-48 w-full overflow-hidden bg-gray-100">
+                <img
+                  src="https://images.unsplash.com/photo-1558002038-1055907df827?q=80&w=800&auto=format&fit=crop"
+                  alt="Paket Akses Door Mandiri"
+                  class="w-full h-full object-cover"
+                />
+              </div>
+              <div class="p-8">
+                <div
+                  class="bg-vernova-green/10 text-vernova-dark text-xs font-bold uppercase tracking-wider px-3 py-1 rounded-full inline-block mb-4"
+                >
+                  Paket Bisnis
+                </div>
+                <h3 class="font-display text-2xl font-bold mb-2">
+                  Paket Akses Door Mandiri
+                </h3>
+                <p class="text-gray-500 text-sm mb-6">
+                  Ideal untuk pintu kantor dan ruang arsip.
+                </p>
+                <ul class="space-y-3 text-sm text-gray-700 mb-8">
+                  <li class="flex items-center gap-2">
+                    <i class="bi bi-check2 text-vernova-green font-bold"></i> 1
+                    Unit Mesin Fingerprint / RFID
+                  </li>
+                  <li class="flex items-center gap-2">
+                    <i class="bi bi-check2 text-vernova-green font-bold"></i> 1
+                    Set Dropbolt Lock / Magnetic Lock
+                  </li>
+                  <li class="flex items-center gap-2">
+                    <i class="bi bi-check2 text-vernova-green font-bold"></i>
+                    Exit Button & Emergency Breakglass
+                  </li>
+                  <li class="flex items-center gap-2">
+                    <i class="bi bi-check2 text-vernova-green font-bold"></i>
+                    Power Supply Box + Acc
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <div class="p-8 pt-0">
+              <a
+                href="https://wa.me/6281234567890?text=Halo%20Suka%20Protect,%20saya%20ingin%20memesan%20Paket%20Akses%20Door%20Mandiri"
+                target="_blank"
+                class="block text-center bg-vernova-green2 text-vernova-dark font-bold py-3 rounded-xl hover:bg-vernova-dark hover:text-white transition-colors"
+                >Pilih Paket Ini</a
+              >
+            </div>
+          </div>
+
+          <!-- Paket 3 -->
+          <div
+            class="bg-white rounded-2xl overflow-hidden border border-gray-200 shadow-sm flex flex-col justify-between reveal-elem"
+          >
+            <div>
+              <div class="h-48 w-full overflow-hidden bg-gray-100">
+                <img
+                  src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?q=80&w=800&auto=format&fit=crop"
+                  alt="Paket Combo Security"
+                  class="w-full h-full object-cover"
+                />
+              </div>
+              <div class="p-8">
+                <div
+                  class="bg-vernova-green/10 text-vernova-dark text-xs font-bold uppercase tracking-wider px-3 py-1 rounded-full inline-block mb-4"
+                >
+                  Paket Komplit
+                </div>
+                <h3 class="font-display text-2xl font-bold mb-2">
+                  Paket Combo Security
+                </h3>
+                <p class="text-gray-500 text-sm mb-6">
+                  Gabungan CCTV dan Akses Door sekaligus.
+                </p>
+                <ul class="space-y-3 text-sm text-gray-700 mb-8">
+                  <li class="flex items-center gap-2">
+                    <i class="bi bi-check2 text-vernova-green font-bold"></i> 4
+                    Unit Kamera CCTV HD
+                  </li>
+                  <li class="flex items-center gap-2">
+                    <i class="bi bi-check2 text-vernova-green font-bold"></i> 1
+                    Unit Paket Akses Door Pintu Utama
+                  </li>
+                  <li class="flex items-center gap-2">
+                    <i class="bi bi-check2 text-vernova-green font-bold"></i>
+                    Gratis Jasa Pemasangan & Setting
+                  </li>
+                  <li class="flex items-center gap-2">
+                    <i class="bi bi-check2 text-vernova-green font-bold"></i>
+                    Garansi Pemasangan
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <div class="p-8 pt-0">
+              <a
+                href="https://wa.me/6281234567890?text=Halo%20Suka%20Protect,%20saya%20ingin%20memesan%20Paket%20Combo%20Security"
+                target="_blank"
+                class="block text-center bg-vernova-dark text-white font-bold py-3 rounded-xl hover:bg-vernova-green2 transition-colors"
+                >Pilih Paket Ini</a
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- GALERI PEMASANGAN SECTION -->
+    <section id="galeri" class="py-20 lg:py-32 bg-white text-vernova-dark">
+      <div class="w-full max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-12">
+        <div class="text-center mb-12 lg:mb-16 reveal-elem">
+          <span
+            class="bg-vernova-green/20 text-vernova-dark px-4 py-1.5 rounded-full text-xs font-bold tracking-widest uppercase inline-block mb-3"
+          >
+            Dokumentasi Lapangan
+          </span>
+          <h2 class="font-display text-3xl sm:text-4xl lg:text-5xl font-bold mb-4">
+            Galeri Pemasangan
+          </h2>
+          <p class="text-gray-600 text-sm sm:text-base max-w-2xl mx-auto">
+            Beberapa hasil dokumentasi pengerjaan pemasangan Akses Door dan CCTV
+            yang telah kami selesaikan untuk para klien.
+          </p>
+        </div>
+
+        <!-- Mobile 2 Columns Grid: grid-cols-2 for mobile, sm:grid-cols-2, lg:grid-cols-3 -->
+        <div
+          class="grid grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-6 reveal-elem"
+        >
+          <!-- Item Galeri 1 -->
+          <div
+            class="group relative overflow-hidden rounded-xl sm:rounded-2xl shadow-md h-48 sm:h-72 bg-gray-100"
+          >
+            <img
+              src="https://images.unsplash.com/photo-1558002038-1055907df827?q=80&w=800&auto=format&fit=crop"
+              alt="Pemasangan Akses Door Kantor"
+              class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+            />
+            <div
+              class="absolute inset-0 bg-gradient-to-t from-vernova-dark/90 via-vernova-dark/30 to-transparent sm:opacity-0 sm:group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-3 sm:p-6"
+            >
+              <span
+                class="text-vernova-green2 text-[10px] sm:text-xs font-bold uppercase tracking-wider mb-0.5 sm:mb-1"
+                >Akses Door</span
+              >
+              <h4 class="text-white font-display text-xs sm:text-lg font-bold leading-snug">
+                Pemasangan Mesin Fingerprint Kantor
+              </h4>
+            </div>
+          </div>
+
+          <!-- Item Galeri 2 -->
+          <div
+            class="group relative overflow-hidden rounded-xl sm:rounded-2xl shadow-md h-48 sm:h-72 bg-gray-100"
+          >
+            <img
+              src="https://images.unsplash.com/photo-1557597774-9d273605dfa9?q=80&w=800&auto=format&fit=crop"
+              alt="Pemasangan Kamera CCTV Outdoor"
+              class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+            />
+            <div
+              class="absolute inset-0 bg-gradient-to-t from-vernova-dark/90 via-vernova-dark/30 to-transparent sm:opacity-0 sm:group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-3 sm:p-6"
+            >
+              <span
+                class="text-vernova-green2 text-[10px] sm:text-xs font-bold uppercase tracking-wider mb-0.5 sm:mb-1"
+                >CCTV</span
+              >
+              <h4 class="text-white font-display text-xs sm:text-lg font-bold leading-snug">
+                Instalasi Kamera Pengawas Ruko
+              </h4>
+            </div>
+          </div>
+
+          <!-- Item Galeri 3 -->
+          <div
+            class="group relative overflow-hidden rounded-xl sm:rounded-2xl shadow-md h-48 sm:h-72 bg-gray-100"
+          >
+            <img
+              src="https://images.unsplash.com/photo-1581092160607-ee22621dd758?q=80&w=800&auto=format&fit=crop"
+              alt="Pengecekan dan Setting DVR CCTV"
+              class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+            />
+            <div
+              class="absolute inset-0 bg-gradient-to-t from-vernova-dark/90 via-vernova-dark/30 to-transparent sm:opacity-0 sm:group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-3 sm:p-6"
+            >
+              <span
+                class="text-vernova-green2 text-[10px] sm:text-xs font-bold uppercase tracking-wider mb-0.5 sm:mb-1"
+                >Maintenance</span
+              >
+              <h4 class="text-white font-display text-xs sm:text-lg font-bold leading-snug">
+                Setting & Konfigurasi Online DVR
+              </h4>
+            </div>
+          </div>
+
+          <!-- Item Galeri 4 -->
+          <div
+            class="group relative overflow-hidden rounded-xl sm:rounded-2xl shadow-md h-48 sm:h-72 bg-gray-100"
+          >
+            <img
+              src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?q=80&w=800&auto=format&fit=crop"
+              alt="Pemasangan Magnetic Lock"
+              class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+            />
+            <div
+              class="absolute inset-0 bg-gradient-to-t from-vernova-dark/90 via-vernova-dark/30 to-transparent sm:opacity-0 sm:group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-3 sm:p-6"
+            >
+              <span
+                class="text-vernova-green2 text-[10px] sm:text-xs font-bold uppercase tracking-wider mb-0.5 sm:mb-1"
+                >Akses Door</span
+              >
+              <h4 class="text-white font-display text-xs sm:text-lg font-bold leading-snug">
+                Pemasangan Magnetic Lock Pintu Kaca
+              </h4>
+            </div>
+          </div>
+
+          <!-- Item Galeri 5 -->
+          <div
+            class="group relative overflow-hidden rounded-xl sm:rounded-2xl shadow-md h-48 sm:h-72 bg-gray-100"
+          >
+            <img
+              src="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?q=80&w=800&auto=format&fit=crop"
+              alt="Perapihan Jalur Kabel"
+              class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+            />
+            <div
+              class="absolute inset-0 bg-gradient-to-t from-vernova-dark/90 via-vernova-dark/30 to-transparent sm:opacity-0 sm:group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-3 sm:p-6"
+            >
+              <span
+                class="text-vernova-green2 text-[10px] sm:text-xs font-bold uppercase tracking-wider mb-0.5 sm:mb-1"
+                >Instalasi</span
+              >
+              <h4 class="text-white font-display text-xs sm:text-lg font-bold leading-snug">
+                Perapihan Jalur Kabel & Rack
+              </h4>
+            </div>
+          </div>
+
+          <!-- Item Galeri 6 -->
+          <div
+            class="group relative overflow-hidden rounded-xl sm:rounded-2xl shadow-md h-48 sm:h-72 bg-gray-100"
+          >
+            <img
+              src="https://images.unsplash.com/photo-1544197150-b99a580bb7a8?q=80&w=800&auto=format&fit=crop"
+              alt="Testing Sistem Keamanan"
+              class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+            />
+            <div
+              class="absolute inset-0 bg-gradient-to-t from-vernova-dark/90 via-vernova-dark/30 to-transparent sm:opacity-0 sm:group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-3 sm:p-6"
+            >
+              <span
+                class="text-vernova-green2 text-[10px] sm:text-xs font-bold uppercase tracking-wider mb-0.5 sm:mb-1"
+                >Testing</span
+              >
+              <h4 class="text-white font-display text-xs sm:text-lg font-bold leading-snug">
+                Uji Coba Sistem Bersama Klien
+              </h4>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT / LET'S TALK SECTION -->
+    <section
+      id="contact"
+      class="py-24 px-6 lg:px-12 bg-vernova-dark text-white relative"
+    >
+      <div class="w-full max-w-[1400px] mx-auto reveal-elem">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+          <div>
+            <span
+              class="bg-vernova-green2/20 text-vernova-green2 px-4 py-1.5 rounded-full text-xs font-bold tracking-widest uppercase inline-block mb-4"
+            >
+              Hubungi Kami
+            </span>
+            <h2
+              class="font-display text-4xl lg:text-5xl font-bold mb-6 leading-tight"
+            >
+              Let's Talk - Konsultasikan Kebutuhan Keamanan Anda
+            </h2>
+            <p class="text-gray-300 text-lg mb-8 leading-relaxed">
+              Hubungi kami untuk survei lokasi, konsultasi pemasangan Akses
+              Door, atau instalasi CCTV baru di tempat Anda melalui WhatsApp.
+            </p>
+
+            <div class="space-y-6">
+              <div class="flex items-center gap-4">
+                <div
+                  class="w-12 h-12 rounded-full bg-white/10 flex items-center justify-center text-vernova-green2"
+                >
+                  <i class="bi bi-geo-alt text-2xl"></i>
+                </div>
+                <div>
+                  <h4 class="font-bold text-sm text-gray-400 uppercase">
+                    Area Layanan
+                  </h4>
+                  <p class="text-white font-medium">Lokal & Sekitarnya</p>
+                </div>
+              </div>
+
+              <div class="flex items-center gap-4">
+                <div
+                  class="w-12 h-12 rounded-full bg-white/10 flex items-center justify-center text-vernova-green2"
+                >
+                  <i class="bi bi-whatsapp text-2xl"></i>
+                </div>
+                <div>
+                  <h4 class="font-bold text-sm text-gray-400 uppercase">
+                    WhatsApp
+                  </h4>
+                  <a
+                    href="https://wa.me/6281234567890?text=Halo%20Suka%20Protect"
+                    target="_blank"
+                    class="text-vernova-green2 font-medium hover:underline"
+                    >+62 812-3456-7890</a
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div
+            class="bg-white/5 border border-white/10 p-8 lg:p-10 rounded-2xl backdrop-blur-sm text-center"
+          >
+            <h3 class="font-display text-2xl font-bold mb-4">
+              Chat Langsung via WhatsApp
+            </h3>
+            <p class="text-gray-300 text-sm mb-8">
+              Respon cepat untuk konsultasi cepat, penawaran harga, dan
+              penjadwalan survei lokasi pemasangan.
+            </p>
+            <a
+              href="https://wa.me/6281234567890?text=Halo%20Suka%20Protect,%20saya%20ingin%20bertanya%20mengenai%20layanan%20Akses%20Door%20dan%20CCTV"
+              target="_blank"
+              class="inline-flex items-center justify-center gap-3 w-full bg-emerald-600 hover:bg-emerald-500 text-white font-bold uppercase tracking-wider py-4 rounded-xl transition-colors duration-300 text-base shadow-lg"
+            >
+              <i class="bi bi-whatsapp text-2xl"></i> Mulai Chat WhatsApp
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer
+      id="footer"
+      class="bg-footer-dark pt-16 pb-8 text-gray-300 font-body relative border-t-2 border-[#333]"
+    >
+      <div class="w-full max-w-[1400px] mx-auto px-6 lg:px-12">
+        <div class="flex flex-col lg:flex-row mb-16 gap-12">
+          <div class="lg:w-1/3 flex flex-col justify-between pr-8">
+            <a href="#" class="flex items-center gap-2 mb-4">
+              <img src="asset/Logo.png" alt="" class="w-[130px]" />
+            </a>
+            <p class="text-sm text-gray-400 mb-6 leading-relaxed">
+              Jasa spesialis pemasangan dan perawatan Akses Door serta CCTV
+              handal untuk keamanan tempat usaha dan hunian Anda.
+            </p>
+          </div>
+
+          <div
+            class="lg:w-2/3 grid grid-cols-1 md:grid-cols-2 gap-8 lg:border-l lg:border-[#333] lg:pl-12"
+          >
+            <div>
+              <h4 class="text-white font-bold text-[15px] mb-4">
+                Layanan Utama
+              </h4>
+              <ul class="space-y-3 text-sm pl-4">
+                <li>
+                  <a href="#akses-door" class="footer-link">Akses Door</a>
+                </li>
+                <li>
+                  <a href="#cctv" class="footer-link">CCTV Surveillance</a>
+                </li>
+                <li>
+                  <a href="#paket-pemasangan" class="footer-link"
+                    >Paket Pemasangan</a
+                  >
+                </li>
+                <li>
+                  <a href="#galeri" class="footer-link">Galeri Pemasangan</a>
+                </li>
+              </ul>
+            </div>
+
+            <div>
+              <h4 class="text-white font-bold text-[15px] mb-4">Navigasi</h4>
+              <ul class="space-y-3 text-sm pl-4">
+                <li><a href="#" class="footer-link">Home</a></li>
+                <li><a href="#about-us" class="footer-link">About Us</a></li>
+                <li>
+                  <a
+                    href="https://wa.me/6281234567890"
+                    target="_blank"
+                    class="footer-link"
+                    >Let's Talk (WhatsApp)</a
+                  >
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="border-t border-[#333] mb-6"></div>
+
+        <div
+          class="flex flex-col items-center justify-center text-[11px] text-gray-400 space-y-4"
+        >
+          <div class="text-center">
+            <p>&copy; 2026 SUKA PROTECT. All rights reserved.</p>
+          </div>
+        </div>
+      </div>
+
+      <button
+        onclick="window.scrollTo({ top: 0, behavior: 'smooth' })"
+        class="absolute bottom-10 right-6 lg:right-12 w-10 h-10 rounded-full bg-white text-footer-dark flex items-center justify-center hover:bg-gray-300 transition-colors shadow-lg"
+      >
+        <i class="bi bi-arrow-up text-lg font-bold"></i>
+      </button>
+    </footer>
+
+    <!-- GSAP & ScrollTrigger JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+
+    <script>
+      gsap.registerPlugin(ScrollTrigger);
+
+      // Hero Slider Logic (3 Slides)
+      let currentHeroIndex = 0;
+      const slides = document.querySelectorAll(".hero-slide");
+      const contents = document.querySelectorAll(".hero-content-group");
+      const dots = document.querySelectorAll(".dot-indicator");
+      let heroInterval;
+
+      function showSlide(index) {
+        slides.forEach((slide, i) => {
+          if (i === index) {
+            slide.classList.remove("opacity-0");
+            slide.classList.add("opacity-100");
+          } else {
+            slide.classList.remove("opacity-100");
+            slide.classList.add("opacity-0");
+          }
+        });
+
+        contents.forEach((content, i) => {
+          if (i === index) {
+            content.classList.remove(
+              "opacity-0",
+              "translate-y-8",
+              "pointer-events-none",
+            );
+            content.classList.add("opacity-100", "translate-y-0");
+          } else {
+            content.classList.remove("opacity-100", "translate-y-0");
+            content.classList.add(
+              "opacity-0",
+              "translate-y-8",
+              "pointer-events-none",
+            );
+          }
+        });
+
+        dots.forEach((dot, i) => {
+          if (i === index) {
+            dot.classList.remove("bg-white/40");
+            dot.classList.add("bg-white", "w-6");
+          } else {
+            dot.classList.remove("bg-white", "w-6");
+            dot.classList.add("bg-white/40");
+          }
+        });
+      }
+
+      function nextSlide() {
+        currentHeroIndex = (currentHeroIndex + 1) % slides.length;
+        showSlide(currentHeroIndex);
+      }
+
+      function changeSlide(direction) {
+        currentHeroIndex =
+          (currentHeroIndex + direction + slides.length) % slides.length;
+        showSlide(currentHeroIndex);
+        resetTimer();
+      }
+
+      function currentSlide(index) {
+        currentHeroIndex = index;
+        showSlide(currentHeroIndex);
+        resetTimer();
+      }
+
+      function resetTimer() {
+        clearInterval(heroInterval);
+        heroInterval = setInterval(nextSlide, 5000);
+      }
+
+      heroInterval = setInterval(nextSlide, 5000);
+
+      // Animasi Reveal saat Scroll
+      gsap.utils.toArray(".reveal-elem").forEach((elem) => {
+        gsap.to(elem, {
+          scrollTrigger: {
+            trigger: elem,
+            start: "top 85%",
+            toggleActions: "play none none reverse",
+          },
+          y: 0,
+          opacity: 1,
+          duration: 1,
+          ease: "power3.out",
+        });
+      });
+
+      // Navbar Background ubah saat scroll
+      const nav = document.getElementById("navbar");
+      window.addEventListener("scroll", () => {
+        if (window.scrollY > 50) {
+          nav.classList.add(
+            "bg-vernova-dark/95",
+            "backdrop-blur-md",
+            "border-b",
+            "border-white/10",
+          );
+          nav.classList.remove(
+            "bg-gradient-to-b",
+            "from-black/80",
+            "to-transparent",
+          );
+        } else {
+          nav.classList.remove(
+            "bg-vernova-dark/95",
+            "backdrop-blur-md",
+            "border-b",
+            "border-white/10",
+          );
+          nav.classList.add(
+            "bg-gradient-to-b",
+            "from-black/80",
+            "to-transparent",
+          );
+        }
+      });
+
+      // Mobile Menu Actions
+      const mobileBtn = document.getElementById("mobile-btn");
+      const mobileMenu = document.getElementById("mobile-menu");
+      const mobileClose = document.getElementById("mobile-close");
+      const mobileLinks = document.querySelectorAll(".mobile-link");
+
+      function closeMobileMenu() {
+        mobileMenu.classList.add("translate-x-full");
+        mobileMenu.classList.remove("translate-x-0");
+        document.body.style.overflow = "";
+      }
+
+      mobileBtn.addEventListener("click", () => {
+        mobileMenu.classList.remove("translate-x-full");
+        mobileMenu.classList.add("translate-x-0");
+        document.body.style.overflow = "hidden";
+      });
+
+      mobileClose.addEventListener("click", closeMobileMenu);
+      mobileLinks.forEach((link) =>
+        link.addEventListener("click", closeMobileMenu),
+      );
+
+      const mobileDropdownBtns = document.querySelectorAll(
+        ".mobile-dropdown-btn",
+      );
+
+      mobileDropdownBtns.forEach((btn) => {
+        btn.addEventListener("click", function (e) {
+          e.preventDefault();
+          const content = this.nextElementSibling;
+          const icon = this.querySelector("i");
+
+          content.classList.toggle("hidden");
+          content.classList.toggle("flex");
+
+          if (content.classList.contains("hidden")) {
+            icon.style.transform = "rotate(0deg)";
+          } else {
+            icon.style.transform = "rotate(180deg)";
+          }
+        });
+      });
+    </script>
+  </body>
+</html>
